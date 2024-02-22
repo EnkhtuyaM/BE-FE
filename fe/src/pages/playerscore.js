@@ -1,18 +1,18 @@
 import React from "react";
 
 export default function Home() {
-  const BE_URL = "http://localhost:3001/add-user";
+  const BE_URL = "http://localhost:3001/playerscore";
 
   async function handleSubmit(e) {
     e.preventDefault();
     const data = {
-      username: e.target.username.value,
+      playerscore: e.target.playerscore.value,
     };
 
     const options = {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application.json",
       },
       body: JSON.stringify(data),
     };
@@ -20,13 +20,12 @@ export default function Home() {
     const FETCHED_JSON = await FETCHED_DATA.json();
     console.log("FETCHED_JSON", FETCHED_JSON);
   }
-
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label for="username">
-          User name:
-          <input id="username" name="username" />
+        <label for="playerscore">
+          Score:
+          <input id="playername" score="playerscore" />
         </label>
         <input type="submit" value="Submit" />
       </form>

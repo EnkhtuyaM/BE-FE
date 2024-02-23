@@ -1,7 +1,9 @@
 import React from "react";
+import { nanoid } from "nanoid";
 
 export default function Home() {
   const BE_URL = "http://localhost:3001/add-user";
+  const newID = nanoid();
 
   async function handleSubmit(e) {
     e.preventDefault();

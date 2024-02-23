@@ -9,13 +9,14 @@ const fs = require("fs");
 const cors = require("cors");
 app.use(cors());
 
-app.get("/products", (request, response) => {
-  response.type = "application/json";
-  response.status(200);
-  response.send({ products });
-});
+// app.get("/products", (request, response) => {
+//   response.type = "application/json";
+//   response.status(200);
+//   response.send({ products });
+// });
 
 app.get("/users", (request, response) => {
+  // const newid = nanoid();
   response.type = "application/json";
   response.status(200);
   response.send({ users });
@@ -60,8 +61,37 @@ app.post("/add-user", (req, res) => {
     }
   });
 });
-// app.post("/read-new-user", (req, res) => {});
+
+app.post("/delete-user", (req, res) => {
+  const idToDelete = req.body.id;
+});
+
+app.post("update-user", (req, res) => {
+  const { id, updateData } = req.body;
+});
 
 app.listen(3001, () => {
   console.log("Server is listening at port 3001");
 });
+
+// let data = {};
+// data.users = [];
+
+// console.log(data);
+
+// const newUser = {
+//   id: 1,
+//   name: "Ali",
+//   age: 23,
+//   surename: "Max",
+//   email: "abc",
+// };
+// const updateData = {
+//   age: 15,
+//   email: "ali@gmail.com",
+// };
+// const updatedData = {
+//   ...newUser,
+//   ...updateData,
+// };
+// console.log(updatedData);

@@ -1,17 +1,1 @@
-{
-  "products": [
-    { "name": "iphone15", "price": 1000 },
-    { "name": "iphone14", "price": 800 }
-  ],
-  "users": [
-    { "name": "Ann", "age": 27 },
-    { "name": "John", "age": 29 },
-    { "name": "Ann", "age": 27 },
-    { "name": "Bold", "age": 15 },
-    { "username": "dsfg" },
-    { "username": "suvd" },
-    { "name": "Bold", "age": 15 },
-    { "username": "Ali" },
-    { "username": "Ali" }
-  ]
-}
+{"products":[{"name":"iphone15","price":1000},{"name":"iphone14","price":800}],"users":[{"name":"Ann","age":27},{"name":"John","age":29},{"name":"Ann","age":27},{"name":"Bold","age":15},{"username":"dsfg"},{"username":"suvd"},{"name":"Bold","age":15},{"username":"Ali"},{"username":"Ali"},{"username":"bayarmaa"},{"username":"bold"}]}

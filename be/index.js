@@ -55,7 +55,7 @@ app.post("/add-user", (req, res) => {
           res.send("error occured");
         } else {
           console.log("success");
-          res.send("User added successfully");
+          res.send(JSON.stringify(jsonFile));
         }
       });
     }
@@ -63,7 +63,22 @@ app.post("/add-user", (req, res) => {
 });
 
 app.post("/delete-user", (req, res) => {
-  const idToDelete = req.body.id;
+  const idToDelete = saveData.filter((d)=>d.id!==body.userId);
+  fs.writeFile(
+    "./data/user.json",
+    JSON.stringify(deleteData),
+    (writeError)=>{
+      if(writeError){
+        res.json({
+          status: "error"
+        })
+      }
+      res.json({
+        status: "success",
+        data: deleteData
+      })
+    }
+  )
 });
 
 app.post("update-user", (req, res) => {

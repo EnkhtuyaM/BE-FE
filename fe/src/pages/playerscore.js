@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Home() {
   const BE_URL = "http://localhost:3001/playerscore";
+  const [score, setScore]=useState([])
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -18,6 +19,7 @@ export default function Home() {
     };
     const FETCHED_DATA = await fetch(BE_URL, options);
     const FETCHED_JSON = await FETCHED_DATA.json();
+    setScore(FETCHED_JSON);
     console.log("FETCHED_JSON", FETCHED_JSON);
   }
   return (
